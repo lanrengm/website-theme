@@ -1,0 +1,242 @@
+
+@ff-title: "Roboto Slab", "Noto Sans Mono", "Noto Sans SC";
+// @ff-content: ;
+// @ff-code: ;
+
+@h1c: #555;
+@h2c: #555;
+@h3c: #555;
+@h4c: #555;
+
+@bgc-win-title: #d6cfe2;
+@bgc-write: #f5f5f5;
+@bgc-side-content: #f2f2f2;
+
+
+header {
+    // 程序标题栏
+    #top-titlebar {
+        font-family: "Roboto Slab", "Noto Sans Mono", "Noto Sans SC";
+        font-size: 16px;
+        background-color: @bgc-win-title;
+        // 修复标题栏高度显示问题 
+        height: unset;
+    }
+
+    // 侧栏（文件管理器，大纲）
+    #typora-sidebar {
+        // 侧栏字体
+        font-family: @ff-title;
+        font-size: 14px;
+
+        .sidebar-content-content {
+            font-size: 14px;
+        }
+        
+        // 侧栏文件列表
+        // #file-library-tree {
+        //     padding: 0;
+        // }
+        // .file-node-content,
+        // .file-node-open-state,
+        // .file-node-icon {
+        //     line-height: 1rem;
+        // }
+        #sidebar-content {
+            // 侧面大纲
+            #outline-content {
+                background-color: @bgc-side-content;
+                // padding: 3px 3px;
+
+                .outline-item {
+                    white-space: nowrap;
+                }
+                .outline-h1 {
+                    >.outline-item {
+                        color: @h1c;
+                        padding-left: 0;
+                    }
+                }
+                .outline-h2 {
+                    // counter-increment: counter_outline_h2;
+
+                    >.outline-item {
+                        color: @h2c;
+                        padding-left:1em;
+
+                        // >.outline-label::before {
+                        //     margin-right: 2px;
+                        //     border-right: 4px solid @h2c;
+                        //     display: inline;
+                        //     padding-right: 4px;
+                        //     content: counter(counter_outline_h2);
+                        // }
+                    }
+                }
+                .outline-h3 {
+                    // counter-increment: counter_outline_h3;
+
+                    > .outline-item {
+                        color: @h3c;
+                        padding-left: 2em;
+                        
+                        // > .outline-label::before {
+                        //     margin-right: 2px;
+                        //     border-right: 4px solid @h3c;
+                        //     display: inline;
+                        //     padding-right: 4px;
+                        //     content: counter(counter_outline_h3);
+                        // }
+                    }
+                }
+                .outline-h4 {
+                    // counter-increment: counter_outline_h4;
+
+                    > .outline-item {
+                        color: @h4c;
+                        padding-left: 3em;
+
+                        // > .outline-label::before {
+                        //     margin-right: 2px;
+                        //     border-right: 4px solid @h4c;
+                        //     display: inline;
+                        //     padding-right: 4px;
+                        //     content: counter(counter_outline_h4);
+                        // }
+                    }
+                }
+            }
+            #file-library {
+                background-color: @bgc-side-content;
+            }
+        }
+    }
+}
+
+content {
+    // 编辑器
+    #write {
+        font-family: "Roboto Slab", "Noto Sans Mono", "Noto Sans SC";
+        font-size: 16px;
+        background-color: @bgc-write;
+        // 内嵌目录
+        .md-toc {
+            padding: 0;
+
+            .md-toc-content {
+                margin: 0 20px;
+                padding: 20px;
+                border-radius: 10px;
+            }
+        }
+        // 正文标题
+        .md-heading {
+            line-height: unset;
+        }
+        h1.md-heading {
+            font-size: 2.3rem;
+            color: @h1c;
+            border-bottom: 4px double @h1c;
+            
+            span > code {
+                font-size: 2.3rem;
+            }
+        }
+        h2.md-heading {
+            font-size: 1.8rem;
+            color: @h2c;
+            border-bottom: 4px solid @h2c;
+            span > code {
+                font-size: 1.8rem;
+            }
+        }
+        h3.md-heading {
+            font-size: 1.5rem;
+            color: @h3c;
+            border-bottom: 2px dashed @h3c;
+
+            span > code {
+                font-size: 1.5rem;
+            }
+        }
+        h4.md-heading {
+            font-size: 1.2rem;
+            color: @h4c;
+            border-bottom: 2px dotted @h4c;
+
+            span > code {
+                font-size: 1.2rem
+            }
+        }
+        // 引用块
+        blockquote {
+            background-color: #ddeeff;
+            border-left: 4px solid #8ccbf2;
+            // 段落
+            p {
+                margin: 0;
+            }
+        }
+        // 段落
+        p.md-p {
+            // 图片
+            .md-image {
+                background-color: #eef2f3;
+                border-radius: 1rem;
+                padding: 5px;
+            }
+        }
+        // 无序列表
+        .ul-list {
+            background-color: #d5ffe5;
+        }
+        // 有序列表
+        // .ol-list {
+        //     border-left: 4px solid #80c342;
+        // }
+        .md-htmlblock {
+            /*****************************
+            ** 视频
+            * div.md-htmlblock
+            *   div.md-htmlblock-container
+            *     div
+            *       video
+            *****************************/
+            // 视频
+            .md-htmlblock-container {
+                border: 1px solid #eef2f3;
+                background-color: #eef2f3;
+
+                border-radius: 10px;
+                padding: 10px;
+            }
+        }
+        // 公式块
+        .md-mathjax-preview > .MathJax,
+        .md-math-container > .MathJax {
+            border-radius: 1rem;
+            padding: 5px;
+        }
+        // 行内公式
+        .md-inline-math-container > .MathJax {
+            margin: 2px 5px;
+            border-radius: .5rem;
+        }
+        code, pre, samp, tt {
+            font-family: "Noto Sans Mono", "Noto Sans SC";
+            font-size: 14px;
+        }
+        // 行内代码
+        span > code {
+            color: #fff;
+            background-color: #ccc;
+
+            border: 0;
+            padding: 0 4px;
+        }
+        // 链接
+        a:hover {
+            color: #ff00e0;
+        }
+    }
+}

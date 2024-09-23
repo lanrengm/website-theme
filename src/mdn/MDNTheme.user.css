@@ -1,0 +1,297 @@
+/*************************************************************************
+** 测试信息
+*************************************************************************/
+/* body::before {
+    display: block;
+    content: "User Script is runing...";
+    color: white;
+    background-color: red;
+} */
+
+
+/*************************************************************************
+** 网页结构
+* 框架 React
+
+* 外层结构
+body
+    div#root
+        div.page-wrapper  // 文档子站的页面
+            div.top-banner   // 最上面的横幅
+            div.sticky-header-container  // 粘性页头
+                div.top-navigation  // 主导航
+                div.article-actions-container  // 内容路径导航
+            div.container  // 翻译页的提示横幅
+            div.main-wrapper // 用来显示文档的容器
+        footer.page-footer // 所有子站的通用页脚，用来显示网站信息
+
+* 文档部分
+* 默认 flex 布局；
+* 宽度大于 769px 时为 2 列 grid 布局；
+* 宽度大于 1200px 时为 3 列 grid 布局。
+div.main-wrapper  // 内容布局容器， 媒体查询节点
+    div.sidebar-container // 双侧栏容器
+        aside.sidebar // 左侧栏容器
+        div.toc-container // 右侧栏容器
+    main.main-content // 正文容器
+        article.main-page-content // 正文内容
+        aside.metadata // 错误反馈部分
+
+* 左侧栏容器
+* 默认flex布局, 宽度大于769px为grid的第一列项
+aside.sidebar
+    button
+    nav.sidebar-inner
+        header.sidebar-actions
+        div.sidebar-inner-nav
+            div.in-nav-toc
+                div.document-toc-container //flex
+                    section.document-toc
+                        header
+                            h2.document-toc-heading
+                        ul.document-toc-list
+                            li.document-toc-item
+                                a.document-toc-link
+            div.sidebar-body
+                ol
+                    li
+
+* 右侧栏容器
+* 默认flex布局, 宽度大于1200px时为grid的第三列项
+div.toc-container
+    // 内容目录的容器，默认隐藏，宽度大于1200px时显示
+    aside.toc
+        nav
+            div.document-toc-container  //flex
+                section.document-toc
+                    header
+                        h2
+                    ul.document-toc-list
+                        li.document-toc-item
+                            a.document-toc-link
+    // 侧边栏底部的空白填充，默认隐藏，宽度大于769px时出现在左侧，宽度大于1200px时出现在右侧
+    section.place.side
+
+// 正文内容
+article.main-page-content
+
+*************************************************************************/
+
+
+/*************************************************************************
+** 隐藏一些不重要的东西
+*************************************************************************/
+/* 最上面的横幅 */
+#root .top-banner,
+/* 页头的导航栏部分 */
+#root .top-navigation,
+/* 翻译页的提示横幅 */
+#root .container,
+/* 内容部分最底下的错误反馈 */
+#root .metadata,
+/* 页脚 */
+#root .page-footer,
+/* 整个右侧栏*/
+#root .toc-container,
+/* 侧边栏内容目录中的标题头，没什么用 */
+#root .document-toc-heading,
+:not(*) {
+    display: none;
+}
+
+
+/*************************************************************************
+** 处理侧栏
+*************************************************************************/
+#root .sidebar-container {
+    /* 重设侧边栏顶部的偏移量 */
+    --offset: var(--article-actions-container-height);
+    /* 给子元素中提供容器的高度值， 这减去的4rem是搜索栏的高度 */
+    --height: calc(100vh - var(--offset) - 4rem);
+}
+#root .sidebar {
+    /* 隐藏整体滚动条 */
+    overflow: hidden;
+}
+#root .in-nav-toc {
+    /* 计算内容目录部分的高度 */
+    height: calc(var(--height)/4);
+    /* 内容目录部分添加滚动条 */
+    overflow: auto;
+
+    /* 内容目录背景色 */
+    padding: 1rem;
+    background-color: #f0fafa;
+}
+#root .sidebar-body {
+    /* 计算页面目录部分的高度 */
+    height: calc(var(--height)/4*3);
+    /* 页面目录部分添加滚动条 */
+    overflow: auto;
+
+    /* 页面目录背景色 */
+    padding: 1rem;
+    background-color: #fafaf0;
+}
+
+
+/*************************************************************************
+** 
+*************************************************************************/
+
+
+/* 文档整体 */
+/* :root {
+    font-size: 16px;
+    --title-color: #6f79ff; /* 文档内容部分 标题颜色 */
+    /* --max-width: 1920px; */ */
+/* } */
+
+
+/*************************************************************************
+** 处理侧边栏
+*************************************************************************/
+
+/* Toc */
+/* #sidebar-quicklinks > nav > div > div.sidebar-body {
+    display: block;
+    background: pink;
+} */
+
+/* Article Toc */
+/* .main-wrapper .toc * {
+    margin: 0;
+    padding: 0;
+} */
+/* .main-wrapper .toc {
+    display: block;
+    background: yellow;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+}
+
+.sidebar-container {
+    display: flex;
+}
+.sidebar {
+    border: 3px solid blue;
+    height: calc(calc(100vh - var(--sticky-header-height))/2);
+    text-overflow: ellipsis;
+} */
+/* .main-wrapper .toc-container { */
+/* .main-wrapper .toc {
+    border: 3px dashed red;
+    height: calc(calc(100vh - var(--sticky-header-height))/2);
+    position: relative;
+    top: calc(calc(100vh - var(--sticky-header-height))/2); */
+/* } */
+
+
+/*************************************************************************
+** 正文样式
+*************************************************************************/
+#root .main-wrapper {
+    margin: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+
+/*****************************
+* 正文内容区域
+*****************************/
+#content {
+    padding: 5px;
+}
+
+/*****************************
+* 标题
+*****************************/
+/* 一级 标题 */
+#content h1 {
+    margin: 0;
+    border-bottom: 1px solid var(--title-color);
+    text-align: center;
+    font-size: 2rem;
+    color: var(--title-color);
+}
+
+/* 二级 标题 */
+#content h2 {
+    margin: 5px 0;
+    border-bottom: 1px solid var(--title-color);
+    border-left: 10px solid var(--title-color);
+    padding-left: 20px;
+    font-size: 1.5rem;
+    color: var(--title-color);
+}
+#content h2 > a {
+    font-size: 1.5rem;
+    color: var(--title-color);
+
+}
+#content h2 a:visited {
+    color: violet;
+}
+
+/* 三级 标题 */
+#content h3 {
+    margin: 5px 0;
+    /* border-bottom: 1px solid var(--title-color); */
+    border-left: 5px solid var(--title-color);
+    padding-left: 20px;
+    font-size: 1.2rem;
+    color: var(--title-color);
+}
+#content h3 > a {
+    font-size: 1.2rem;
+    color: var(--title-color);
+
+}
+#content h3 a:visited {
+    color: violet;
+}
+
+/* 链接 标题 */
+#content dt {
+    margin: 5px 0;
+    border-left: 3px solid var(--title-color);
+    padding: 0 0 0 5px;
+}
+#content dt > a {
+    color: var(--title-color);
+}
+
+/* 普通 段落 */
+/* #content p {
+    margin: 5px 0 5px 2rem;
+
+} */
+/* 列表 段落 */
+#content dd {
+    margin: 0;
+}
+
+/* Content */
+.table-container {
+    margin: 0;
+    width: 100%;
+}
+
+/*****************************
+*  站内链接分析
+*****************************/
+/* a[href*="/docs/Web"] {
+    border: 3px solid #1a7cfc;
+}
+a[href*="docs/Learn"] {
+    border: 3px solid skyblue;
+}
+
+.doc-path {
+    margin: 0 20px;
+    border-bottom: 1px solid silver;
+    position: relative;
+    background-color: white;
+} */

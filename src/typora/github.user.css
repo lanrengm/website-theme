@@ -1,0 +1,141 @@
+header #top-titlebar {
+  font-family: "Roboto Slab", "Noto Sans Mono", "Noto Sans SC";
+  font-size: 16px;
+  background-color: #d6cfe2;
+  height: unset;
+}
+header #typora-sidebar {
+  font-family: "Roboto Slab", "Noto Sans Mono", "Noto Sans SC";
+  font-size: 14px;
+}
+header #typora-sidebar .sidebar-content-content {
+  font-size: 14px;
+}
+header #typora-sidebar #sidebar-content #outline-content {
+  background-color: #f2f2f2;
+}
+header #typora-sidebar #sidebar-content #outline-content .outline-item {
+  white-space: nowrap;
+}
+header #typora-sidebar #sidebar-content #outline-content .outline-h1 > .outline-item {
+  color: #555;
+  padding-left: 0;
+}
+header #typora-sidebar #sidebar-content #outline-content .outline-h2 > .outline-item {
+  color: #555;
+  padding-left: 1em;
+}
+header #typora-sidebar #sidebar-content #outline-content .outline-h3 > .outline-item {
+  color: #555;
+  padding-left: 2em;
+}
+header #typora-sidebar #sidebar-content #outline-content .outline-h4 > .outline-item {
+  color: #555;
+  padding-left: 3em;
+}
+header #typora-sidebar #sidebar-content #file-library {
+  background-color: #f2f2f2;
+}
+content #write {
+  font-family: "Roboto Slab", "Noto Sans Mono", "Noto Sans SC";
+  font-size: 16px;
+  background-color: #f5f5f5;
+}
+content #write .md-toc {
+  padding: 0;
+}
+content #write .md-toc .md-toc-content {
+  margin: 0 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+content #write .md-heading {
+  line-height: unset;
+}
+content #write h1.md-heading {
+  font-size: 2.3rem;
+  color: #555;
+  border-bottom: 4px double #555;
+}
+content #write h1.md-heading span > code {
+  font-size: 2.3rem;
+}
+content #write h2.md-heading {
+  font-size: 1.8rem;
+  color: #555;
+  border-bottom: 4px solid #555;
+}
+content #write h2.md-heading span > code {
+  font-size: 1.8rem;
+}
+content #write h3.md-heading {
+  font-size: 1.5rem;
+  color: #555;
+  border-bottom: 2px dashed #555;
+}
+content #write h3.md-heading span > code {
+  font-size: 1.5rem;
+}
+content #write h4.md-heading {
+  font-size: 1.2rem;
+  color: #555;
+  border-bottom: 2px dotted #555;
+}
+content #write h4.md-heading span > code {
+  font-size: 1.2rem;
+}
+content #write blockquote {
+  background-color: #ddeeff;
+  border-left: 4px solid #8ccbf2;
+}
+content #write blockquote p {
+  margin: 0;
+}
+content #write p.md-p .md-image {
+  background-color: #eef2f3;
+  border-radius: 1rem;
+  padding: 5px;
+}
+content #write .ul-list {
+  background-color: #d5ffe5;
+}
+content #write .md-htmlblock {
+  /*****************************
+            ** 视频
+            * div.md-htmlblock
+            *   div.md-htmlblock-container
+            *     div
+            *       video
+            *****************************/
+}
+content #write .md-htmlblock .md-htmlblock-container {
+  border: 1px solid #eef2f3;
+  background-color: #eef2f3;
+  border-radius: 10px;
+  padding: 10px;
+}
+content #write .md-mathjax-preview > .MathJax,
+content #write .md-math-container > .MathJax {
+  border-radius: 1rem;
+  padding: 5px;
+}
+content #write .md-inline-math-container > .MathJax {
+  margin: 2px 5px;
+  border-radius: 0.5rem;
+}
+content #write code,
+content #write pre,
+content #write samp,
+content #write tt {
+  font-family: "Noto Sans Mono", "Noto Sans SC";
+  font-size: 14px;
+}
+content #write span > code {
+  color: #fff;
+  background-color: #ccc;
+  border: 0;
+  padding: 0 4px;
+}
+content #write a:hover {
+  color: #ff00e0;
+}
